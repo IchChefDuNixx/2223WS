@@ -1,0 +1,83 @@
+Sheet notes ss22
+
+URL:
+Chapter 0
+7-8 SV vs USV
+9 Techniques
+16 Properties of a similarity function
+21,22 Hamming Distance, Edit Distance (note just the existence of them)
+26 K-mean algorithm
+31 K-mean strengths
+32 rule of thumb k=sqrt(n/2)
+
+Chapter 1
+5,6 ideas for loss function
+9,10 Elbow method using distortion, basic idea
+12,13 Silhouette score formula, low/high meaning
+24,30 Linkage
+29 Understanding dendrogram (highest vertical distance)
+32 Agnes vs Diana
+33 K-Mean vs H-Clustering
+
+Chapter 2
+Idea: write down the method signature of certain classes (e.g. DBSCAN(X,eps=default_value,minpts=default_value) etc.)
+6 DBSCAN Overviews
+8,15 types of points
+12 algorithm
+26 epsilon elbow method
+31 comparison
+
+Chapter 3
+4-8 examples for use-cases
+12 Label encoding
+13 One hot encoding
+14,15 what to do with data
+17,20,22 Scaler functions
+
+Chapter 4
+8 Curse of Dimensionality
+15 Benefits of Dimensionality Reduction
+22 Usage of PCA
+25 projection
+27 mafs
+30 visualization
+31 steps for pca
+32 more mafs
+33,34 cov
+35,36 number of pcs
+
+Chapter 5
+8 PCA simplified
+16 how to project on PC?
+17 total variation formula
+18,19 more cov (19 real eigenvalues, diagonalization)
+20,21 cov properties
+
+Chapter 6
+9 Eigenface algorithm
+11 PCA vs SNE
+14 SNE
+17-23 t-SNE algorithm
+
+Chapter 7
+Autoencoder tasks = {compress-decompress, denoise, anomaly detection}
+13,14 Visualizations
+keras code?
+
+Chapter 8
+4 diagram
+9,11 RL characteristics
+15 Markov Property
+24 Discount Factor
+25 Markov Decision Process
+27 Qt(a)
+
+Mock exam missing knowledge
+5a layer size formulas
+6b MDP
+6c Q-Learning
+
+Chapter 9
+
+
+Chapter 10

@@ -1,0 +1,16 @@
+/1a
+when a fit is overly specific to the trainging data instead of the general patterns. e.g. a polynomial with a too high degree
+b)
+2,3?
+not 1 and 4
+
+/3
+mis(D) = 1 - max(D) = 1 - 0.25 = 0.75
+mis(D1) = 1 - max(D1) = 1 - 0.5 = 0.5
+mis(D2) = 1 - max(D2) = 1 - 0.5 = 0.5
+deltamis = mis(D) - weightedMean(mis(D1), mis(D2)) = 0.75 - (0.5 * 0.5 + 0.5 * 0.5) = 0.25
+
+gini(D) = 1 - 4* 0.25² = 1 - 0.25 = 0.75
+gini(D1) = 1 - 2* 0.25² - 0.5² = 1 - 2/16 - 4/16 = 10/16
+gini(D2) = 1 - 2* 0.25² - 0.5² = 1 - 2/16 - 4/16 = 10/16
+deltagini = gini(D) - weightedMean(gini(D1), gini(D2)) = 0.75 - 0.5 * 20/16 = 12/16 - 10/16 = 1/8

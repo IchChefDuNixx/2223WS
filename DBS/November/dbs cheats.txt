@@ -1,0 +1,60 @@
+Functional Dependency (FD): A -> B
+
+Key: 
+	# Heuristic
+	(i)  check if all attributes that are on no right side are key
+	(ii) if yes -> only key
+		 if no -> check subsets
+	# Definition
+	(i) {A}+ = R -> A is superkey
+	(ii) A cannot be shortened -> A is key
+	
+Closure: FD = A -> B, B -> C, AB -> E
+		{A}+ = {A, B, C, E}
+
+Cover: 
+	(i) Splitting
+	~ AB -> ACDE
+	  AB -> A # trivial
+	  AB -> C
+	  AB -> D
+	# compress again
+	~ AB -> CD
+	
+	(ii) Shorten left sides
+	ABC -> DEF
+	{AB}+ =? {D, E, F}
+	if yes: shortened
+	if no: do nothing
+	# FD changes during Algorithm
+	
+	(iii) Remove unnecessary FDs
+	AB -> CD
+	{A, B}+\{A, B -> C, D} =? CD
+	if yes: remove
+	if no: do nothing
+		
+Normal Forms:
+	1NF = atomic data
+	2NF = 1NF + nothing depends on just a key subset, not 2NF if any attribute is not included in any FD
+	3NF = 2NF + (no transitives) OR (left side key or right side prime)
+	BCNF = 3NF + left side superkey
+	
+Decomposition:
+	A, B -> C, D
+	S1 = {A, B}+
+	S2 = R - S1 union {A, B}
+	# check for dependency preservation
+	# check for BCNF compliance again
+	
+Synthesis:
+	(i) add R -> d # extended Synthesis algorithm
+	(ii) apply Cover algorithm
+	(iii) A -> B becomes {A, B} = S1
+	(iv) check if any Si contains superkey # just in normal Synthesis algorithm
+	(v) cleanup ({A, B}, {A, B, C}) -> {A, B, C}
+	
+example?
+AB -> CD AC -> D D -> E
+S1 = ABD S2 = ACD
+# AB -> CD missing
