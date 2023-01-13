@@ -1,0 +1,16 @@
+
+1a finding the mapping between x and y (in, out)
+b finding patterns in data (eg yt recos)
+c exploration/exploitation, rewarding good behaviour, punishing bad behaviour, sits between environment and agent
+
+2a measuring and placing objects into the feature space
+b choice of hypothesis class of real world problem
+c updating parameters in model function
+
+3a choice of hypothesis space, data acquisition, feature subset selection, optimization procedure, performance measure
+b predicting a random number. genereally hard when there is no pattern
+c a higher bias results in a stronger resilience to outliers. modeling higher dimension models increases the variance
+there is a sweet spot between bias and variance. going to an extreme is bad
+d there doesn't exist a function that works best for everything. mulitple problems may require different solutions
+e see c
+f linear/high dimensional graph
