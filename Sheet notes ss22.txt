@@ -81,3 +81,11 @@ Chapter 9
 
 
 Chapter 10
+
+Stoch:
+definition of a (discrete) probability space
+5 remark 4
+6 prop 10
+8 def 1
+9 def 5
+9 prop 8 i

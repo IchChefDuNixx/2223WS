@@ -382,47 +382,6 @@ with FDR as (
 	where recursion.Ahne=FDR.Name
 ) select distinct * from recursion where Ahne is not null or deg=0 order by deg
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 drop table Student_in_Veranstaltung;
 drop table Veranstaltungen;
 drop table Dozenten;
