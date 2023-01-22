@@ -167,3 +167,6 @@ derivation and integration rules
 how to deal with |X| (eg 2 different cases or P({-a < X < a}))
 diagrams of all, just regular or just weird distros
 ex 6.1 min(a,b) > x <=> (a > x) ^ (b > x)
+population variance/stdev = n
+sample variance/stdev = n-1
+7.3
