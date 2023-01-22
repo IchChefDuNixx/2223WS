@@ -83,9 +83,87 @@ Chapter 9
 Chapter 10
 
 Stoch:
+
+BSOM:
+part 3
+(diagram of a rectangle Omega with subsets A,B + page 4 def 3)
+sigma Algebra (collection of subsets in discr.) -> discrete=Powerset(Omega); abs. cont.=Borelset(Omega)
+discrete=countably many outcome; abs. cont.=uncountably many outcomes; mixed=at least 1 discrete point and 1 continous part
+discrete pmf = sum of single probabilities within set
+abs. cont. pdf = integral of f(x) over set (f(x) = distribution like U,Exp,N)
+part 5
+definition of a (discrete) probability space
+part 6
+Hypergeometric: H(N,Kn,n)
+-P({k1,k2,k3})=(N1 choose k1 * N2 choose k2 * N3 choose k3)/(N choose n)
+-2 class: P({k})=((N1 choose k1) * (N-N1 choose n-k))/(N choose n)
+part 9
+change of integral interval with set
+part 11
+Bernoulli: Bin(1,p)
+part 12
+determine the cdf/how to take the integral
+part 13
+independence of random variables, joint cdf
+page 12 def 13
+page 13 ex 14, prop 15
+part 14
+formula for manually calculating the expectation
+part 15
+properties of the expectation
+part 16
+formula for manually calculating the variance
+properties of the variance 
+part 18 more properties of var and std
+proofs
+
+*determine rules for interchanging sums and unions or sums and products etc
+/*Big table for all distributions*/
+
+
+
+Binomial: B(n,p), n=trials,p=chance of success, E(X)=np, Var(X)=np(1-p)
+-P({X=k})=(n choose k)* p^k * (1-p)^(n-k)
+
+
+Multinomial: M(n,p0...pm), same as having m Binomials with n trials each but different p, P(A=x,B=y,C=z)=((x+y+z)!/(x!*y!*z!))*(pa^x)*(pb^y)*(pc^z)
+
+
+
+Poisson: P(lambda)
+Geometric: Geo(p)
+
+Uniform: U(a,b)
+Exponential: Exp(lambda)
+Normal: N(mu,sigma^2)
+
+
+
 definition of a (discrete) probability space
 5 remark 4
-6 prop 10
+6 prop 10 i-v
+6 prop 2 i,ii
 8 def 1
 9 def 5
-9 prop 8 i
+9 prop 8 i,ii
+
+
+
+17 def 2
+17 prop 4
+
+28 prop 7
+
+
+
+
+find out the max/min of multiple variables (2.1b)
+log rules!
+poisson limit theorem. B(n,p) -> P(n*p)
+	H(N,K,n) -> B(K/N)
+definition of E and Var for discrete and continous caseshttps://proofwiki.org/wiki/Variance_of_Continuous_Uniform_Distribution
+integral over x^2 * f(x) dx - E(X)^2
+derivation and integration rules
+how to deal with |X| (eg 2 different cases or P({-a < X < a}))
+diagrams of all, just regular or just weird distros
+ex 6.1 min(a,b) > x <=> (a > x) ^ (b > x)
