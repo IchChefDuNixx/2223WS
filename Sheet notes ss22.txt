@@ -170,3 +170,65 @@ ex 6.1 min(a,b) > x <=> (a > x) ^ (b > x)
 population variance/stdev = n
 sample variance/stdev = n-1
 7.3
+
+
+
+
+
+
+
+
+ch2 p11 types of attributes
+p19 types of data sets
+p32 preprocessing
+ch3 knn
+p4 genereal properties
+p5 pseudocode nn/knn
+ch4 bayes formula
+do examples, weather/email ex from tilly (spam)
+ch5 regression
+ch6 p37 infogain
+ch6.2 random forest, model stacking, bagging, boosting, pruning, ID3 algorithm
+ch7 p41 p(y|x) = sigma * sigma-
+perceptron?
+ch8
+ch9 confusion matrix, performance estimation, roc curve
+ch10 adaboost p9
+
+SQL concepts:
+-DDL/DML
+-create/drop/alter table
+-int/float/decimal/(var)char/bit/date/time
+-constraint c check
+-insert/update/delete
+-SFW block
+-cast
+-relational algebra (projection, selection, cross product, join, renaming, difference, intersection, union)
+-Aggregates
+-group by/having/order by
+-top-k
+-named queries (with t as (...))
+-recursion
+-division
+-integrity constraints
+-inline triggers
+-standard triggers (inserted, deleted)
+-views
+-access rights
+-variables
+-functions
+-procedures
+-if/else
+-while loop
+-cursor
+
+Atomicity
+Consistency
+Isolation
+Durability
+
+Dirty Read
+Unrepeatable Read
+Lost Update
+Phantom Problem
+
