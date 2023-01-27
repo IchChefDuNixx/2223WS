@@ -1,0 +1,142 @@
+	
+Approaches for applying the feature selection in general?
+
+In general, there are three ways to do it:
+
+- filter approach: No training process/ model involved; Assess importance of features by measuring some form of "correlation" with the target variable. e.g. chi2 test or F-test for assessing individual features. e.g. ReliefF-algorithm or MRMR also take into account interactions of features. Then select the features with highest scores according to above measures and ignore everything else.
+
+- wrapper approaches: Choose a subset of features, train a classifier using the subset and record the classifier's performance; add/remove feature from subset and repeat; Finally select the subset that scored best; Starting with an empty subset and adding features is called 'forward selection', starting with the full set and removing features is called 'backward selection'.
+
+- embedded approaches: Some learning algorithms have built-in feature selection. E.g. decision trees perform feature selection by choosing the best split attributes. Optimization based algorithms can integrate regularization (e.g L1-norm of params) to select features while training.  
+
+How to do the ranking in the Naive Bayes?
+
+Suppose a Naive Bayes classifier is built to classify whether someone buys ice/coke/nothing given the wheather condition.
+
+C := Ice / Coke / Nothing
+
+x1 := sunny / cloudy
+
+x2 := hot / cold
+
+Then, given some test example (e.g. <x1=sunny,x2=hot>), we can calculate the posterior probabilities of the class variable:
+
+p(C = Ice | x1 = sunny, x2 = hot) = 1/Z * P(x1=sunny | C=Ice) * P(x2=hot| C=Ice) * P(C=Ice)
+
+p(C = Coke | x1 = sunny, x2 = hot) = 1/Z * P(x1=sunny | C=Coke) * P(x2=hot| C=Coke) * P(C=Coke)
+
+p(C = Nothing | x1 = sunny, x2 = hot) = 1/Z * P(x1=sunny | C=Nothing) * P(x2=hot| C=Nothing) * P(C=Nothing)
+
+, where Z = P(x1=sunny, x2=hot); Z is called a normalizing constant. It is the same quantity in all three equations. Since we are only interested in the class with highest posterior probability, we don't even bother calculating 1/Z. Since the quantities on the left-hand side are no longer normalized, we call them "rank order values" as their order is still the same. Then we predict the class label with highest rank order value.
+
+What is the difference between ensemble learning and the Boosting algorithm?
+
+- ensemble learning refers to the general strategy of combining multiple learners into a single strong learner.
+
+- Boosting is one category of ensemble learning. It aims to create a strong learner by sequentially adding weak learners that best correct the misclassifications of the ensemble built so far. 
+
+A quick revision on the graphical representation of updating the weights in the neural network's first lecture
+
+-- discussed during Q&A
+
+-> Adding a quantity proportional to the misclassified data point to the weight vector, changes the weight vector slightly in the direction of the data point. ...until the data point is no longer on the wrong side of the decision boundary. 
+
+A quick revision on the concept of the Re-substitution in the lecture of the performance evaluation 
+
+Resubstition would use the entire dataset for both training and testing.
+
+- overly optimistic estimation of learner's performance
+
+- once we test the learner on unseen examples (not used during training), we would be disappointed by its actual performance.
+
+-> don't use it. Results would be misleading.
+
+Difference between inductive reasoning and the inductive Bias 
+
+In contrast to what you have seen in AI1 with propositional/first-order logic (deductive reasoning), inductive reasoning starts with a set of specific observations and tries to derive a general principle under which the observations are likely. The correctness of the derived general principle can not be determined. But the chance of it being wrong can be assessed in terms of the number of observations that support it. (-> that's what we try to do using learning algorithms)
+
+Inductive bias is a term used in the field of machine learning and it refers to the assumptions about the target function we build into a model, such that the model hopefully approximates the target function even in regions where we have never seen any examples.
+
+x      y
+
+3.0 -> 10.0
+
+4.0 -> 12.0
+
+5.0 -> 14.0
+
+6.0 -> 16.0
+
+test-example:
+
+3.6 -> 11.2 or -9834.2 or "peter"
+
+How would anyone know which value should be assigned to 3.6 without having seen the example (3.6, "peter")? I got you, the correct target function is:
+
+x      y
+
+3.0 -> 10.0
+
+3.6 -> "peter"
+
+4.0 -> 12.0
+
+5.0 -> 14.0
+
+6.0 -> 16.0
+
+Apparently, with your background knowledge in linear regression, your inductive reasoning apparatus is biased towards linear relationships between x and y. Decision trees are biased towards believing that any class boundary must run along coordinate axes (Any justification for that? No, but it leads to simple explanations about the data). LogReg and Perceptron are biased towards believing that the further a point is away from a line (perceptron does not even care about the distance), the more it belongs to one of two classes (There is no reason to believe the world is that simple; but the computation is simple and we can interpret whether a variable contributes positively/negatively to a point being classified as class 1/0).
+
+What  is the difference between the concept of accuracy and the bias 
+
+- discussed
+
+Bias, precision and accuracy are concepts to characterize how well an estimator performs over many samples. The average of the samples is called the expected value of the estimator. 
+
+Bias: The closeness of the expected value of the estimates to the true value of the parameter being estimated. It reveals systematic deviation from the truth. (e.g. measured as Mean Error)
+
+Precision: The closeness of the estimates to each other. (e.g. measured as Variance)
+
+Accuracy: The overall closeness of the estimates to the true value of the param- eter. Precision and Bias are components of Accuracy. (e.g. measured as Mean Squared Error)
+
+Link: https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.2005.0906-7590.04112.x
+
+The difference between the supervised and the unsupervised discretization 
+Discretization: Partition the value range of a numerical attribute into intervals. Assign a categorical value to each interval.
+
+- Unsupervised discretization: The partitioning is made without any information about the class label. E.g. range is [13.3, 71.0]; partition into three intervals each of size (71.0-13.3)/3. Or partition in 10 intervals with 10% data points in each of them; 
+
+- Supervised discretization: It would be a pity if we chose intervals such that examples from many different classes fall into the same interval because then the feature loses its discriminative power. 
+
+The difference between the symmetric and the Asymmetric binary features 
+
+Binarization: Map the values of a feature to multiple binary features.
+
+Consider feature MUSIC_GENRE with values ["hiphop", "punk", "ska"]
+
+- Symmetric (encode value as binary number): "hiphop" -> 0 -> 00 (binary), "punk" -> 1 -> 01 (binary), "ska" -> 2 -> 10 (binary)
+
+- Asymmetric (map value to 1-hot-code): "hiphop" -> 0 -> 100, "punk" -> 1 -> 010, "ska" -> 2 -> 001
+
+What is the difference between the plurality value and the majority value?
+Majority vote: > 50% ?
+
+Plurality vote: argmax classes
+
+What is the micro averaging?
+
+- discussed; not relevant; will be removed.
+
+Answers for sheet 2 
+
+1a: Digit
+
+1b: Letter
+
+1c: All or some majority of the k neighbours must belong the same class otherwise we abstain from a classification and reject the feature vector.
+
+1d: Store the training examples in a k-d tree data structure. Average complexity for look-up is in O(log N), with N being the number of training examples. Downside: Construct and maintain tree. In an online setting, we would need to re-balance the tree as new training examples arrive.
+
+Exercise 02 sheet 4 
+The solution sheet is up. The file was a bit large, so I uploaded it with smaller images.
+
