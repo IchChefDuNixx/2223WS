@@ -176,8 +176,8 @@ sample variance/stdev = n-1
 
 
 
-
-
+SVL:
+// Nici's notes on what to remember
 ch2 p11 types of attributes
 p19 types of data sets
 p32 preprocessing
@@ -194,6 +194,55 @@ perceptron?
 ch8
 ch9 confusion matrix, performance estimation, roc curve
 ch10 adaboost p9
+
+// own notes
+Applications: Computer Vision, Speech Processing (making decisions)
+1/13 direct or indirect feedback/reward
+1/27 Categorization of supervised learning problems:
+	❑ If Y is qualitative/discrete, we refer to the problem as Classification problem.
+	❑ If Y is quantitative/continuous, we refer to the problem as Regression problem.
+1/28 Modelling Error, Sampling Error, Optimization/Generalization Error
+1/31 LMS
+1/37 Bias-Variance tradeoff
+1/38 no free lunch theorem
+2/11 types of attributes
+2/15 types of attributes
+2/32 preprocessing techniques
+3/4 general properties
+3/13 runtime complexity of n
+3/20 knn challenges
+4/1 basic bayes
+4/7 analogy to ML
+4/10 independence
+4/22 
+	(2/9)*(3/9)*(3/9)*(3/9)*(9/14) = 0.0053
+	(3/5)*(1/5)*(4/5)*(3/5)*(5/14) = 0.0206
+	yes/total -> 20,5%
+	no/total -> 79,5%
+5/9 b1,b0
+5/11 r² = sum(f(xi)-ȳ)² / sum(yi-ȳ)²
+5/19 polynomial regression -> multiple linear regression
+6/19 when to use decision trees
+6/28 impurity reduction
+ID3 decision tree algorithm, split based on entropy
+CART algorithm = ID3 with only binary splittings
+6b/30-32 Pruning techniques
+6b/39,40 Ensemble learning techniques
+6b/46 Random Forest properties
+7/19 weight update: wi += mu * error * xi
+7/39 sigmoid function
+7/41 double sigmoid
+8/6,7,8 activation functions
+8/13 Learning Rate
+9/12 F Score, F1=2(Prec*Reca / Prec + Reca)
+9/15 roc curve, TPR/FPR
+9/29 Performance estimation summary
+10/8,9 adaboost formulas
+
+
+
+
+
 
 SQL concepts:
 -DDL/DML
