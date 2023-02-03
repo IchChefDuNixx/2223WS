@@ -65,25 +65,34 @@ Autoencoder tasks = {compress-decompress, denoise, anomaly detection}
 keras code?
 
 Chapter 8
-4 diagram
+4,8 diagram
 9,11 RL characteristics
-15 Markov Property
 24 Discount Factor
 25 Markov Decision Process
 27 Qt(a)
 
-Mock exam missing knowledge
-5a layer size formulas
-6b MDP
-6c Q-Learning
 
 Chapter 9
 
 
 Chapter 10
 
-Stoch:
 
+Chapter 11
+
+
+Chapter 12 (Recap)
+
+
+
+Mock exam missing knowledge
+5a layer size formulas
+6b MDP
+6c Q-Learning
+
+
+
+Stochastics:
 BSOM:
 part 3
 (diagram of a rectangle Omega with subsets A,B + page 4 def 3)
@@ -117,46 +126,69 @@ properties of the variance
 part 18 more properties of var and std
 proofs
 
-*determine rules for interchanging sums and unions or sums and products etc
-/*Big table for all distributions*/
-
-
-
-Binomial: B(n,p), n=trials,p=chance of success, E(X)=np, Var(X)=np(1-p)
--P({X=k})=(n choose k)* p^k * (1-p)^(n-k)
-
-
-Multinomial: M(n,p0...pm), same as having m Binomials with n trials each but different p, P(A=x,B=y,C=z)=((x+y+z)!/(x!*y!*z!))*(pa^x)*(pb^y)*(pc^z)
-
-
-
-Poisson: P(lambda)
-Geometric: Geo(p)
-
-Uniform: U(a,b)
-Exponential: Exp(lambda)
-Normal: N(mu,sigma^2)
-
 
 
 definition of a (discrete) probability space
-5 remark 4
+5 remark 4 rewritten events
+5 ex 8 |Pow(Omega)| = 2^|Omega|
+5 def 9 sigma additivity (p of disjoint union = sum of p of disjoint events) ?
 6 prop 10 i-v
-6 prop 2 i,ii
-8 def 1
-9 def 5
-9 prop 8 i,ii
-
-
-
+6 prop 2 i,iii proof
+8 def 1 + bayes
+9 remark 4 q(w)
+9 def 5,6
+9 prop 8 i,ii + P(A)P(B|A) = P(B)P(A|B) if Ai,Bi > 0
+10 def 2 x = X(w) realization
+11 def 8,12 prop 10 indentically distributed random variables
+12 def 13,13 prop 15 independence of random variables
+16 Figure 5.1 (what is a contingency table)
 17 def 2
 17 prop 4
+/*Big table for all distributions*/
+	Bernoulli: B(1,p) single binomial trial with p=chance of sucess, E(X)=p, Var(X)=p*(1-p)
+	Binomial: B(n,p), n=trials,p=chance of success, E(X)=np, Var(X)=np(1-p)
+	-P({X=k})=(n choose k)* p^k * (1-p)^(n-k)
+	Multinomial: M(n,p0...pm), same as having m Binomials with n trials each but different p, P(A=x,B=y,C=z)=((x+y+z)!/(x!*y!*z!))*(pa^x)*(pb^y)*(pc^z)
+	E(Xi) = npi, Var(Xi) = n*pi*(1-pi)
+	Hypergeometric: H(N,K,n) urn model without replacement, n,k <= N, E(X) = n* K/N, Var(X) = n* K/N * N-K / N * N-n / N-1
+	P(X=k) = (K choose k)*(N-K choose n-k)/(N choose n)
+	H -> B if 20 prop 11 holds (p = K/N for large enough N)
+	Poisson: Poi(lambda) E(X) = lambda, Var(X) = lambda, P(X=k) = exp(-lambda) * lambda^k / k!
+	poisson limit theorem: B -> Poi if 20 prop 13 holds (lambda = n*p for big enough n)
+	used for radioactive decay or calls per hour in a call center
+	Geometric: Geo(p), E(X) = 1/p Var(X) = (1-p)/p², discrete exponential, used for waiting time
+	P(X=k)=p*(1-p)^(k-1)
+	discrete uniform: P(X=k) = 1/n, E(X)=(a+b)/2, Var(X)=(n²-1)/12
 
-28 prop 7
+	continuous Uniform: U(a,b)
+	Exponential: Exp(lambda)
+	Normal: N(mu,sigma^2)
+*still discrete here
+24 def 1 E(X) = sum(outcome * respective probability)
+24 prop 5 ii proof
+25 def 9,remark 10, 26 prop 12 i,ii proof
+27 prop 15 chebyshev
+28 def 18 sample variance correction factor
+*now continuous
+31 remark 6 proof
+32 def 7 E(X) = int_R (x*f(x)) dx, Var(X) = int_R (x-E(X))^2 dx
+33 def 6 independence
+34 def 1 cdf
+34 prop 5 get cdf by integrating pdf
+35 cdf of Exp(l) = 1-exp(-lx) # maybe add more cont. cdfs
+37 ex 10 quantile for Exp(l)
+37 def 12 median m(X) -> p = 0.5
+38 prop 15 |E(X) - m(X)| = std(X)
+41 lemma 3 proofs for sample E(XBarn) and Var(XBarn)
+43 prop 7 SLLN: XBarn lim->a.s. E(X1)
 
 
 
 
+
+
+extras:
+*determine rules for interchanging sums and unions or sums and products etc
 find out the max/min of multiple variables (2.1b)
 log rules!
 poisson limit theorem. B(n,p) -> P(n*p)
@@ -170,8 +202,14 @@ ex 6.1 min(a,b) > x <=> (a > x) ^ (b > x)
 population variance/stdev = n
 sample variance/stdev = n-1
 7.3
-
-
+note down Z score of common values (1,2,3) + Z score given confidence (90%,95%,99%)
+CI for mu of normal dist: xBar +- q_1-alpha * sigma / sqrt n
+CI for mu with unknown var of normal dist: xBar +- t(n-1)_1-alpha * E(sigma) / sqrt n
+CI for var of normal dist with unknown mu:
+[Sn² * (n-1) / KAI²(n-1)_1-alpha/2 ; Sn² * (n-1) / KAI²(n-1)_alpha/2]
+note down how much % 1,2,3 * std covers (68.269, 95.450, 99.730)
+ask about 33 prop 9
+ask about Limit Theorems
 
 
 
