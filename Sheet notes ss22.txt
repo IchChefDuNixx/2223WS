@@ -20,7 +20,6 @@ Chapter 1
 33 K-Mean vs H-Clustering
 
 Chapter 2
-Idea: write down the method signature of certain classes (e.g. DBSCAN(X,eps=default_value,minpts=default_value) etc.)
 6 DBSCAN Overviews
 8,15 types of points
 12 algorithm
@@ -67,29 +66,41 @@ keras code?
 Chapter 8
 4,8 diagram
 9,11 RL characteristics
-24 Discount Factor
 25 Markov Decision Process
-27 Qt(a)
-
+	set of states
+	set of actions
+	transition probabilities
+	reward probabilities
+	discount factor for controlling the importance of immediate and future rewards (p24)
 
 Chapter 9
-
+7 Markov Property: the future depends on the present and not the past
+	More specifically, the future is independent of the past given the present
+8 Types of Markov Models
+descriptive names for V,Q,R,S...
 
 Chapter 10
-
-
-Chapter 11
-
+?
 
 Chapter 12 (Recap)
-
-
+k-means rule of thumb: k=sqrt(n/2)
+elbow method: distortion
+sihlouette score: S formula + meaning high/low
+eigenvectors
+tsne idea
+State, Action, Reward, MDP
+copy slide 39
 
 Mock exam missing knowledge
+cov formula (1/(n-1))*sum(xi-xBar)(yi-yBar)
+eigenvector
 5a layer size formulas
+	When padding="same" and strides=1, the output has the same size as the input.
+	Normal 		Height = (Input Height + Padding height (top and bottom) - Kernel Height) / Stride Height + 1
+	Transposed  new_rows = ((rows - 1) * strides[0] + kernel_size[0] - 2 * padding[0] + output_padding[0])
 6b MDP
 6c Q-Learning
-
+Idea: write down the method signature of certain classes (e.g. DBSCAN(X,eps=default_value,minpts=default_value) etc.)
 
 
 Stochastics:
@@ -182,7 +193,9 @@ definition of a (discrete) probability space
 41 lemma 3 proofs for sample E(XBarn) and Var(XBarn)
 43 prop 7 SLLN: XBarn lim->a.s. E(X1)
 
-
+51 lemma 3 proof
+consistency?
+min/max
 
 
 

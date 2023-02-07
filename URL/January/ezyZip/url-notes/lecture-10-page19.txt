@@ -1,0 +1,33 @@
+lecture 9 MDP
+
+page 3,4 - Notation
+
+
+Two main characteristics for MDPs
+
+Control over state transitions
+States completely observable
+
+
+Types of Markov Models
+
+1. Control over state transitions and completely observable states: MDPs
+2. Control over state transitions and partially observable states: Partially Observable MDPs (POMDPs)
+3. No control over state transitions and completely observable states: Markov Chain
+4. No control over state transitions and partially observable states: Hidden Markov Model
+
+**MDP page 9 (again)
+
+Model-based RL: this is where we can clearly define our (1) transition probabilities and/or (2) reward function. A global minima can be attained via Dynamic Programming (DP)
+
+Model-free RL: this is where we cannot clearly define our (1) transition probabilities and/or (2) reward function. Most real-world problems are under this category so we will mostly place our attention on this category
+
+Dynamic programming/iterative policy evaluation: is breaking down a problem into smaller sub-problems, solving each sub-problem and storing the solutions to each of these sub-problems in an array (or similar data structure) so each sub-problem is only calculated once
+
+The utility value (V): is the summary of the reward of itself and all the future states following that policy. (page 14)
+
+Example of Utility for Policy page 16
+
+Example of Utility for Policy Stochastic case pag 18
+
+Policy evaluation: for a given policy, we evaluate that policy by determining the utility of each state.

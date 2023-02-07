@@ -1,0 +1,43 @@
+lecture 8 
+
+Reinforcement learning - learning by trial and error
+
+page 8
+
+Characteristics of RL:
+
+There is no supervisor, only a reward signal
+Feedback is delayed, not instantaneous (=> reward may be delayed)
+Time really matters
+Agent’s action affects the subsequent data it receives, actions may have long term consequences
+
+Elements of RL:
+
+RL is about what to achieve
+Maps situations (states) to actions -... to maximize a reward
+The learner (agent) is not told which actions to take ... but must discover which actions yield the most reward
+An agent receives the systems state and a reward signal
+A reward is a scalar feedback signal and indicates how well an agent is doing at step t
+The system makes a transition to a new state and the cycle is repeated
+
+**page 12
+
+**Types of State page 14
+
+**Markov Property page 15
+
+**page 22!!
+
+**page 25: Markov Decision Process
+
+n-Armed Bandit Strategy page 27
+Q-learning:
+Learning the model on the fly! nO prior knowledge is required!
+
+OpenAI - ensure that artificial general intelligence (AGI) — highly autonomous systems
+that outperform humans at most economically valuable work — benefits all of humanity.
+Will attempt to directly build safe and beneficial AGI, but will also consider mission
+fulfilled if work aids others to achieve this outcome
+
+Gym - toolkit for developing and comparing reinforcement learning algorithms. Supports
+teaching agents everything from walking to playing games like Pong or Pinball

@@ -1,0 +1,102 @@
+lecture 6
+Eigenface Algorithm
+
+ Align training images (Note: that each image is formulated into a long
+vector)
+ Compute average face (mean)
+ Compute the difference image (the centered data matrix)
+ Compute the covariance matrix
+ Compute the eigenvectors of the covariance matrix Σ
+ Compute each training image xi ‘s projections
+ Visualize the estimated training face xi
+
+Stochastic Nearest Neighbor Embeddings
+Stochastic Nearest Neighbor Embeddings is an alternative dimensionality reduction
+algorithm
+t-SNE is the most popular one
+PCA tries to find a global structure
+Low dimensional subspace
+Can lead to local inconsistencies
+Far away point can become nearest neighbors
+t-SNE tries to preserve local structure
+Low dimensional neighborhood should be the same as original neighborhood.
+Unlike PCA almost only used for visualization
+
+SNE: Main Idea: Map near points of high-dimensional space to a near position in lowdimensional space.
+
+Input space: building P using probability distributions so that picking two similar points is
+much more probable than picking two points which are well far apart.
+
+Output space: building Q using probability distributions to judge distances between
+points
+
+**T-SNE does: Find a way to project data into a low dimensional space (e.g. 1-D) so that clustering in the
+high dimensional space (e.g. 2-D) is preserved!
+
+t-SNE algorithm: 1.Start with original scattered data and map data points to lower dimension in random order.
+2.t-SNE moves data points until they are clustered correctly
+3.Move a point closer to its cluster points: These points attract!
+4.Other points who are not part of the cluster push pack: These points repel!
+
+tSNE STEP 1:Determine the "similarity" of all points in
+the scatter plot.
+Measure the distance of one point to all
+other points
+Calculate for given distance the normal
+distribution value
+Using normal distribution means that
+similar points have high value and others
+have low value
+
+STEP2: Normalize scores (sum to 1) to make clusters comparable
+=> make scores of relatively tight clusters same as for relatively loose clusters: 
+** Score/sum(scores) = scaled score
+
+STEP 3: 
+Similarity matrix of all data points
+t-SNE sets value for same points to 0!
+
+STEP 4: Repeat for low-dimension (here:1-D)
+Calculate scores of each point now base on t-distribution
+Create matrix of similarity score ... BUT ...
+
+STEP 5: t-SNE tries to create a matrix of scores which looks like the original by moving each point
+a bit at a time
+Each step t-SNE chooses a direction that makes the matrix on the left more like the matrix
+on the right
+
+Input Space: 
+Stochastic Neighbor Embedding (SNE) starts by converting the high dimensional
+Euclidean distances between data-points into conditional probabilities that represent
+similarities.
+Given a set of high-dimensional data-points
+The similarity of data-point to is the conditional probability , that would pick as its neighbor.
+We assume that neighbors are picked in proportion to their probability density under a Gaussian centered at with variance :
+
+Output Space: page 25
+
+
+**Crowding Problem
+
+In high dimension we have more room, points can have a lot of different neighbors
+In 2D a point can have a few neighbors at distance one all far from each other - what happens when we embed in 1D?
+This is the ”crowding problem” - we don’t have enough room to accommodate all neighbors.
+This is one of the biggest problems with SNE.
+t-SNE solution: Change the Gaussian in Q to a heavy tailed distribution.
+if Q changes slower, we have more ”wiggle room” to place points at
+
+Kullback-Leibler (KL) divergence page 27
+
+SNE minimizes the sum of KL divergences over all data-points using a gradient descent method.
+
+Cost Function page 28
+
+perplexity is a measurement of how well a probability model predicts a sample
+
+perplexity page 29
+
+Since gradient descent does not guarantee convergence to the optimal solution (it might get
+stuck at a local optimum), it is common to run the optimization several times in order to find
+the appropriate parameters.
+
+An eigenface is the name given to a set of eigenvectors when used in the computer vision problem of human face recognition. 

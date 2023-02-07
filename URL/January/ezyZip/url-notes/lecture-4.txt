@@ -1,0 +1,94 @@
+lecture 4
+
+dimensionality is the number of dimensions, features, or variables
+associated with a sample of data.
+
+Dimensionality reduction, or dimension reduction, is the transformation of data from a high-dimensional space into a low-dimensional space so that the low-dimensional representation retains some meaningful properties of the original data, ideally close to its intrinsic dimension
+
+The Curse of Dimensionality
+Increasing the number of features will not always improve classification accuracy.
+
+Sparse data is a variable in which the cells do not contain actual data within data analysis. Sparse data is empty or has a zero value. Sparse data is different from missing data because sparse data shows up as empty or zero while missing data doesn't show what some or any of the values are.
+
+//
+Pre-processing/feature
+engineering
+The quality of the information provided during the algorithm development, as well as the
+correlation between the input data and the desired result, is critical in order for a highperforming solution to be designed.
+We should isolate the most important components of information from the data and
+provide this to the model so that only the most relevant information is being provided.
+This can also have a secondary benefit in that we have reduced the number of features
+being provided to the model, so there can be a corresponding reduction in the number of
+calculations to be completed. This can reduce the overall training time for the system.
+//
+
+
+Dimensionality reduction is also a Noise reduction technique
+
+Generating plausible artificial datasets:
+divide the dataset into the components of information (or variation), we can
+investigate the effects of each components or generate new dataset samples by adjusting
+the ratios between features.
+
+
+Dimension Reduction lead to
+Simpler models
+Because
+Simpler to use by lower computational complexity
+Easier to train because needs less examples
+Less sensitive to noise because less noise
+Easier to explain because better interpretable
+Generalizes better through lower variance
+
+**
+Positive correlation: tells us that both variables move in the same direction e.g. both
+values are increasing simultaneously.
+Negative correlation: describes inversely correlated variables. Meaning, if one variable is
+increasing the other is decreasing or vice-versa.
+A correlation coefficient of zero shows that there is no relationship at all.
+
+
+Approaches to Dimensionality Reduction
+1. Feature selection
+2. Feature Extraction
+
+Linear dimensionality reduction:
+Classification: maximize separation among classes
+Example: Linear Discriminant Analysis (LDA)
+
+Regression: maximize correlation between projected data and response variable
+Example: Partial Least Squares (PLS)
+
+Unsupervised: retain as much data variance as possible
+Example: Principal Component Analysis (PCA)
+
+Principal Component Analysis (PCA): It seeks a projection that preserves as much information as possible in the data.
+
+Linear Discriminant Analysis (LDA):- It seeks a projection that best
+discriminates the data.
+
+
+Principal Component Analysis (PCA) is an exploratory approach to reduce the data set's
+dimensionality to 2D or 3D, used in exploratory data analysis for making predictive models.
+Principal Component Analysis is a linear transformation of data set that defines a new
+coordinate rule such that:
+The highest variance by any projection of the data set appears to laze on the first axis.
+The second biggest variance on the second axis, and so on.
+
+
+
+Usage of PCA:
+To reduce the number of dimensions in the dataset.
+To find patterns in the high-dimensional dataset
+To visualize the data of high dimensionality
+To ignore noise
+To improve classification
+To gets a compact description
+To captures as much of the original variance in the data as possible
+
+
+
+How does PCA work?
+The orthogonal projection of data from high dimensions to lower dimensions such that:
+Maximizes the variance of the projected line (purple)
+Minimizes the MSE between the data points and projections (blue)

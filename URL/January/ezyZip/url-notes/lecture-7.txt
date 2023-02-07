@@ -1,0 +1,57 @@
+lecture 7 
+
+Autoencoders
+
+Autoencoders are:
+1. A particular kind of learning architecture
+2. A mechanism of compressing inputs into a form that can later be decompressed
+
+Autoencoders are for:
+1. reduce data dimensionality or find a better suited representation for another task
+2. blend inputs from one input to another
+
+Lossless and Lossy Encoding:
+A way to test if a transformation is lossy or lossless is to consider if it can be inverted, or
+run backwards, to provide us with the original data.
+
+Loss function: sum(x - xhat)^2
+
+
+An autoencoder finds the best way to encode the input so that the decoded version is as close
+as possible to the input.
+So Autoencoders can be thought of as a
+generalization of PCA.
+
+In equations: page 13 + image**
+
+**page 14 
+
+The latent space is simply a representation of compressed data in which similar data points are closer together in space.
+
+Variational Autoencoders page 32
+
+Loss functions for VAE:
+Overall, the loss function leads to a
+clustering of similar inputs in the
+latent-space, and these clusters
+densely packed
+This means that if we pick a point in the
+latent-space, it can generate a goodquality image.
+We can also interpolate between two
+input-points in the latent-space to
+generate new images.
+
+
+
+convolution
+
+A convolution is an integral that expresses the amount of overlap of one function g as it is shifted over another function f.
+page 27(?)
+
+
+
+
+
+
+
+

@@ -1,0 +1,99 @@
+DBSCAN
+
+May correspond to meaningful taxonomies
+Once a decision is made to combine two clusters, it can’t be undone
+Too slow for large data sets, O(𝑛2 log(𝑛))
+
+
+
+MinPts – minimum number of points in the given neighbourhood Nε(q)
+q is called a core object (or core point) if |Nε(q)| ≥ MinPts
+
+High Density v.s. Low Density
+
+Two parameters
+Eps (ε): Maximum radius of the neighborhood
+MinPts : Minimum number of points in the Eps-neighborhood of a point
+High density: ε-Neighborhood of an object contains at least MinPts of objects
+Low density : ε-Neighborhood of an object does not contain at MinPts of objects
+
+Core point: A core point is one in which at least have minPts number of points (including the point itself) in its surrounding region within the radius eps: $if |N (p)|≥ MinPts§
+
+Border point: has fewer than MinPts within its ϵ-neighborhood (N), but it lies in the neighborhood of another core point.
+
+Noise point: A noise point (outlier) is neither a core point and nor is it reachable from any core points.
+
+
+Direct density reachability
+
+An object p is directly density-reachable from object q if (1) q is a core object and (2) p is in q’s
+ε-neighborhood. A point p is density-reachable from a point q if there is a chain of points p1, ..., pn, p1 = q, pn =
+p such that p is directly density-reachable from . i+1 pi
+
+Density connectivity
+
+A point p is density-connected to a point q if there is a point o such that both p and q are density-reachable from o
+
+DBSCAN Clustering Algorithm
+We start with the data points and values of eps and minPts as input:
+ Out of n unvisited sample data points, we'll first move through each point in a loop and
+mark each one as visited.
+ From each point, we'll look at the distance to every other point in the dataset.
+ All points that fall within the neighborhood radius hyperparameter (eps) should be
+considered as neighbors.
+ The number of neighbors should be at least as many as the minimum points required
+(MinPts).
+ If the minimum point threshold is reached, the points should be grouped together as a
+cluster, or else marked as noise.
+ This process should be repeated until all data points are categorized in clusters or as noise.
+
+DBSCAN is also more effective against outliers and noise than k-means or hierarchical
+clustering.
+
+page 21
+
+Finding the Optimal value of Eps
+
+Rather than experimenting with different 
+values of epsilon, we can use the elbow
+point detection method to arrive at a
+suitable value of epsilon.
+
+Approach
+Average the distance between each
+point and its k-NearestNeighbors (e.g.
+k = MinPts) and plot the average kdistances in ascending order on a kdistance graph.
+The optimal value for epsilon is the
+point with maximum curvature or
+bend, i.e. at the greatest slope.
+
+
+k-mean vs. HClustering vs. DBSCAN
+
+1. kmeans and hierarchical clustering are good when you have some idea regarding the
+number of clusters in your data.
+2. DBSCAN, instead, takes a more bottom-up approach by working with your
+hyperparameters and finding the clusters it views as important. It is robust to noise and
+can detect arbitrarily-shaped clusters.
+3. Compared to k-means and hierarchical clustering, DBSCAN can be seen as being
+potentially more efficient, since it only has to look at each data point once.
+4. K-means and hierarchical clustering requires multiple iterations of finding new centroids
+and evaluating where their nearest neighbors are, once a point has been assigned to a
+cluster in DBSCAN, it does not change cluster membership.
+5. No need to pass a number of clusters to DBSCAN and hierarchical clustering both share, in comparison with k-means.
+
+
+k-mean vs. HClustering vs.DBSCAN
+
+kmeans and hierarchical clustering are good when you have some idea regarding the
+number of clusters in your data.
+DBSCAN, instead, takes a more bottom-up approach by working with your
+hyperparameters and finding the clusters it views as important. It is robust to noise and
+can detect arbitrarily-shaped clusters.
+Compared to k-means and hierarchical clustering, DBSCAN can be seen as being
+potentially more efficient, since it only has to look at each data point once.
+K-means and hierarchical clustering requires multiple iterations of finding new centroids
+and evaluating where their nearest neighbors are, once a point has been assigned to a
+cluster in DBSCAN, it does not change cluster membership.
+No need to pass a number of clusters to DBSCAN and hierarchical clustering both share, in
+comparison with k-means.

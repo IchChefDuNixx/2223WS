@@ -1,0 +1,93 @@
+lecture 1
+
+Two common loss functions:
+
+Inertia: Sum of squared distances
+from each data point to its center.
+
+Distortion: Weighted sum of squared
+distances from each data point to its
+center.
+K-Means Clustering for K = 4
+To evaluate different clustering results, we need a loss function.
+Example:page 6
+
+
+Picking k: Elbow Method
+Basic idea:
+ 1.specify k = 2 as the initial optimal cluster number k and then increase k by step 1 to the
+maximal specified k
+ 2.find centeroids for given k
+ 3.calculate the cost C as the mean distortion
+sum of the squared Euclidean distances (SSE) divided by N (number of data points)
+per each cluster
+ 4.increase k and repeat 2.- 4.
+
+The optimal cluster number k is the point from where on the cost C remains almost unchanged
+This point is called cost peak value
+
+
+Silhouette Score
+To evaluate how “well clustered” a specific data point is, we can use the “silhouette score”, a.k.a. The “silhouette width”.
+
+High score: Near the other points in its X’s cluster.
+Low score: Far from the other points in its cluster.
+
+S = (B-A)/max(A,B)
+A = average distance to other points in cluster.
+B = average distance to points in closest cluster.
+Can S be negative? Yes!
+
+page 17!
+
+Hierarchical Clustering
+Basic idea:
+Every data point starts out as its own cluster.
+Join clusters with neighbors until we have only k clusters left
+
+Clustering and Dendograms
+Agglomerative clustering is one form of “hierarchical clustering”
+Can keep track of when two clusters got merged
+Each cluster is a tree
+Can visualize merging hierarchy, resulting
+in a dendrogram (typical hierch clust diagr)
+
+
+Linkage
+
+Linkage is used to calculate your centroids in hierarchical clustering
+Linkage is the concept of determining how you can calculate the distances within clusters
+
+
+Divisive Clustering
+So far, agglomerative clustering which means bottom_up (most common!)
+The opposite, top-down, is called divisive hierarchical clustering
+
+
+Agglomorative vs. Divisive
+
+Agglomerative clustering: Commonly referred to as AGNES (AGglomerative NESting)works in a bottom-up manner.
+
+Divisive hierarchical clustering: Commonly referred to as DIANA (DIvise ANAlysis) works in a top-down manner.
+
+Divisive clustering is more complex as compared to agglomerative clustering, as in case of divisive clustering we need a flat clustering method as “subroutine” to split each cluster
+until we have each data having its own singleton cluster.
+
+Divisive clustering is more efficient if we do not generate a complete hierarchy all the way down to individual data leaves.
+
+Divisive algorithm is also more accurate. Agglomerative clustering makes decisions by considering the local patterns or neighbor points without initially taking into account the
+global distribution of data. These early decisions cannot be undone.
+
+
+
+k-means vs H-Clustering
+
+in hierarchical clustering you can start clustering without knowing k a priori
+Start algorithm and cluster then decide which one makes sense
+
+k-means is super simplistic and easy to explain
+
+Hierarchical clustering has more parameters to tweak, thus it deals better with abnormally
+shaped data which results in better clusters (outlier)
+
+k-means might take some time to converge depending on centroids a picked at start

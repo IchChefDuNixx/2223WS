@@ -1,0 +1,46 @@
+Principal Component Analysis (PCA) is an exploratory approach to reduce the data set's
+dimensionality to 2D or 3D, used in exploratory data analysis for making predictive models.
+Principal Component Analysis is a linear transformation of data set that defines a new
+coordinate rule such that:
+The highest variance by any projection of the data set maps to the first axis.
+The second biggest variance on the second axis, and so on.
+
+
+Variance**page 17
+Eigenvalues:
+We have used squared sum , e.g. ss1 and ss2, of the distances of the projected points to
+the origin
+This can be converted to variation by dividing by the sample size minus 1 (n-1)
+and
+Example:
+PC1 = 15 and PC2 = 3 => total variation is PC1+PC2 = 18
+PC1 accounts fr 15/18=0.83= 83% of the total variation
+PC2 accounts for 3/18=0.17= 17%
+var1 = ss2/n − 1 ; var2 = ss2/n − 1
+
+page18**
+
+
+Covariance Properties 1/2 page 21
+Because the covariance matrix is symmetric, the eigenvectors are orthogonal to each
+other.
+The eigenvalues and eigenvectors come in pairs. Such a pair is known as an eigenpair. The
+number of eigenpairs is equal to the number of rows or columns in the covariance matrix.
+For example, in a 4 x 4 covariance matrix, there are 4 eigenvalues and 4 eigenvectors.
+The eigenvectors of the covariance matrix represent the principal components (directions
+of maximum variance).
+The eigenvalues of the covariance matrix define the magnitude of eigenvectors. To get the
+top eigenvectors, we have to sort the eigenvalues in descending order.
+The amount of variance explained by an eigenvector can be obtained by getting the ratio
+(fraction) between the corresponding eigenvalue and the sum of all eigenvalues.
+The covariance matrix of standardized data is almost equal to the correlation matrix of the
+non-standardized, original data.
+The diagonal in the covariance matrix of standardized data always contains 1s.
+The sum of all eigenvalues of the covariance matrix is equal to the sum of the diagonal
+elements in the covariance matrix.
+
+
+Eigenvectors
+The eigenvectors V represent the directions of the largest variance of the data
+The eigenvalues represent the magnitude of this variance in those directions.
+CV = λV

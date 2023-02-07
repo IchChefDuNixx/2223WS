@@ -1,0 +1,66 @@
+lecture 3 
+
+One-hot Encoding
+
+One hot encoding is a process by which categorical variables are converted into a form
+that could be provided to ML algorithms to do a better job in prediction.
+
+Considerations for Clustering
+
+Case 1 - Incomparable units (Height vs weight): You cannot compare, so the default
+decision is to standardize (equalize variances) => "every unique aspect of nature is
+assumed to have same, unit variability of observations"
+Case 2 - Same units (Height vs circumference): These are clearly independent
+(conceptually, not statistically) phenomena of reality. Their same-unitness seems a
+coincidence. The default decision is to standardize the features.
+Case 3 - Same units, juxtaposed features (Length of right arm vs of left arm): We could
+naturally compare the two lengths if we need so, they two are interchangeable, in a sense.
+The default decision is to leave variances as is (no matter how much they differ). Because
+"leave nature under study be how it is".
+Case 4 - Undecided whether 2 or 3 (Length of arm vs length of leg): We could compare
+these but we are not interested in that, rather, we prefer to see the lengths as separate
+dimensions (albeit not irrelative phenomena)
+
+
+1. Scale generally means to change the range of the values. The shape of the distribution
+doesn’t change. Think about how a scale model of a building has the same proportions as
+the original, just smaller. That’s why we say it is drawn to scale. The range is often set at 0
+to 1.
+2. Standardize generally means changing the values so that the distribution’s standard
+deviation equals one. Scaling is often implied.
+3. Normalize can be used to mean either of the above things (and more!). I suggest you
+avoid the term normalize, because it has many definitions and is prone to creating
+confusion.
+
+MinMaxScaler page 17
+
+MinMax Scaler preserves the shape of the original distribution. It doesn’t meaningfully
+change the information embedded in the original data.
+The default range for the feature returned by MinMaxScaler is 0 to 1.
+
+
+Robust Scaler page 20
+
+Robust Scaler algorithms scale features that are robust to outliers. The method it follows is
+almost similar to the MinMax Scaler but it uses the interquartile range (rather than the minmax used in MinMax Scaler). The median and scales of the data are removed by this scaling
+algorithm according to the quantile range
+
+The RobustScaler does not scale the data into a predetermined interval like MinMaxScaler.
+It does not meet the strict definition of scale.
+It reduces the effects of outliers
+
+The StandardScaler standardizes features by removing the mean and scaling to unit variance.
+The standard score z of a value v in feature F is calculated as (page 22)
+
+StandardScaler is the industry’s go-to algorithm.
+StandardScaler standardizes a feature by subtracting the mean and then scaling to unit
+variance.
+Unit variance means dividing all the values by the standard deviation.
+StandardScaler does not meet the strict definition .
+StandardScaler results in a distribution with a standard deviation equal to 1. The variance is
+equal to 1 also, because variance = standard deviation squared. And 1 squared = 1.
+StandardScaler makes the mean of the distribution approximately 0.
+
+Use StandardScaler if you want each feature to have zero-mean, unit standarddeviation.
+Use MinMaxScaler if you want to have a light touch. It’s non-distorting.
+Use RobustScaler if you have outliers and want to reduce their influence.
