@@ -502,6 +502,7 @@ class PriorityQueue:
 
 
 
+
 # if __name__ == "__main__":
 # Create a new grid
 buildingDict = read_city_json("CityMapData.json")
