@@ -804,12 +804,13 @@ class PriorityQueue:
 # if __name__ == "__main__":
 # Create a new grid
 
-# buildingDict = read_city_json("CityMapData.json")
-buildingDict = read_city_json("TestCityData.json")
-palaceton = Grid((20,20),buildingDict)
+buildingDict = read_city_json("CityMapData.json")
+palaceton = Grid((70,70),buildingDict)
+# buildingDict = read_city_json("TestCityData.json")
+# palaceton = Grid((20,20),buildingDict)
 # palaceton.draw()
-palaceton.auto_solve("random", show_results=True, iterations=100)
+palaceton.auto_solve("random", show_results=True, iterations=1)
 
         
-toaster = ToastNotifier().show_toast("CityOptimizer", "Batch done", sound=False)
+# toaster = ToastNotifier().show_toast("CityOptimizer", "Batch done", sound=False)
 
